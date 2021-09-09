@@ -1,0 +1,49 @@
+<div class="dialog-login">
+  <div class="dialog-head">
+    <button class="close-icon" (click)="closeDialog()">
+      <img src="assets/icons/close.svg" alt="">
+    </button>
+  </div>
+
+  <div class="content">
+    <div class="dialog-title">
+      <h2>Регистрация</h2>
+    </div>
+    <div class="dialog-content">
+      <form [formGroup]="registerForm">
+        <input
+          type="number"
+          class="phone"
+          placeholder="Телефон"
+          formControlName="phone"
+        >
+        <input
+          type="email"
+          class="email"
+          placeholder="Электронная почта"
+          formControlName="email"
+        >
+        <div class="hide-pass">
+          <input
+            [type]="fieldTextType ? 'text' : 'password'"
+            class="password"
+            placeholder="Пароль"
+            formControlName="password"
+          >
+          <img [src]="fieldTextType ? 'assets/icons/remove_red_eye.svg' : 'assets/icons/close-eye.svg'" (click)="toggleFieldTextType()">
+        </div>
+
+        <div class="hide-pass">
+          <input
+            [type]="confirmTextType ? 'text' : 'password'"
+            class="confirmPassword"
+            placeholder="Повторите пароль"
+            formControlName="confirmPassword"
+          >
+          <img [src]="confirmTextType ? 'assets/icons/remove_red_eye.svg' : 'assets/icons/close-eye.svg'" (click)="toggleConfirmTextType()">
+        </div>
+        <button class="register-btn" (click)="register()">Войти</button>
+      </form>
+    </div>
+  </div>
+</div>

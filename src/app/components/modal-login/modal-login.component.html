@@ -1,0 +1,34 @@
+<div class="dialog-login">
+  <div class="dialog-head">
+    <button class="close-icon" (click)="closeDialog()">
+      <img src="assets/icons/close.svg" alt="">
+    </button>
+  </div>
+
+  <div class="content">
+    <div class="dialog-title">
+      <h2>Вход</h2>
+    </div>
+    <div class="dialog-content">
+      <form [formGroup]="loginForm">
+        <input
+          type="number"
+          class="phone"
+          placeholder="Телефон"
+          formControlName="phone"
+        >
+        <div class="hide-pass">
+          <input
+            [type]="fieldTextType ? 'text' : 'password'"
+            class="password"
+            placeholder="Пароль"
+            formControlName="password"
+          >
+          <img [src]="fieldTextType ? 'assets/icons/remove_red_eye.svg' : 'assets/icons/close-eye.svg'" (click)="toggleFieldTextType()">
+        </div>
+        <a class="forgot-pass">Напомнить пароль</a>
+        <button class="login-btn" (click)="login()">Войти</button>
+      </form>
+    </div>
+  </div>
+</div>

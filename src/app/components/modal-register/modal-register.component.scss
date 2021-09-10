@@ -40,7 +40,23 @@
       padding: 0 45px;
 
       input.ng-dirty.ng-invalid {
-        border:1px solid red
+        background: #FFFAFA;
+        border: 1px solid #F93232;
+      }
+
+      .validator{
+        text-align: initial;
+        margin-bottom: 8px;
+
+        span{
+          font-family: 'Gilroy', sans-serif;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 16px;
+          color: #AAAAAA;
+          margin-left: 5px;
+        }
       }
 
       .phone{
@@ -95,8 +111,16 @@
           border: 1px solid #605DEC;
         }
       }
+      .rep{
+
+        img{
+          top: 15px!important;
+        }
+      }
       .hide-pass{
         position: relative;
+
+
 
         input.ng-dirty.ng-invalid {
           border:1px solid red
@@ -160,6 +184,9 @@
           }
         }
       }
+      .mt{
+        margin-top: 14px!important;
+      }
       .register-btn{
         width: 100%;
         height: 48px;
@@ -199,5 +226,16 @@ input[type="number"]::-webkit-inner-spin-button {
 @media (max-width: 375px) {
   .dialog-content{
     padding: 0!important;
+  }
+}
+
+@media only screen and (max-width:414px) {
+  .dialog-login{
+    .content{
+
+      .dialog-content{
+        padding: 0;
+      }
+    }
   }
 }

@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { ModalRegisterComponent } from './components/modal-register/modal-register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {SwiperModule} from "swiper/angular";
+import {NgxMaskModule} from "ngx-mask";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {SwiperModule} from "swiper/angular";
     ReactiveFormsModule,
     NgbModule,
     SwiperModule,
+    NgxMaskModule.forRoot()
   ],
   entryComponents: [
     ModalLoginComponent

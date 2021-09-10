@@ -77,11 +77,11 @@
     <p class="sub-title">Стоимость зависит от трафика сайта</p>
     <div class="tariff-slider">
       <swiper #swiperRef [config]="configTariff" class="swiperTariff">
-        <ng-template swiperSlide let-data *ngFor="let slide of slides">
+        <ng-template swiperSlide let-data *ngFor="let slide of slides; let i = index">
           <div class="tariff-item">
             <header class="tariff-item__header">{{slide.name}}</header>
             <div class="tariff-item__content">
-              <h3 class="tariff-item__title">{{slide.text}}</h3>
+              <h3 class="tariff-item__title text_{{i+1}}">{{slide.text}}</h3>
               <div class="tariff-item__price">{{slide.pricePer}}</div>
               <a href="#" class="tariff-item__btn">{{slide.connect}}</a>
             </div>
@@ -195,7 +195,6 @@
           © 2021 Tocha. Все права защищены
         </div>
         <div class="col-sm-auto col-12">
-          Разработано <a href="">Ka Business Team</a>
         </div>
       </div>
     </div>

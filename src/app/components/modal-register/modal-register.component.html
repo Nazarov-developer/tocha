@@ -12,11 +12,17 @@
     <div class="dialog-content">
       <form [formGroup]="registerForm">
         <input
-          type="number"
+          type="text"
           class="phone"
+          (ngModelChange)="checkPhone($event)"
           placeholder="Телефон"
+          [class.ng-invalid]="isValid"
           formControlName="phone"
+          maxlength="11"
         >
+        <div class="validator" *ngIf="isValid">
+          <img src="/assets/icons/error.svg" alt=""> <span class="text">Введите номер в формате +7(ххх)-ххх-хх-хх</span>
+        </div>
         <input
           type="email"
           class="email"
@@ -33,7 +39,7 @@
           <img [src]="fieldTextType ? 'assets/icons/remove_red_eye.svg' : 'assets/icons/close-eye.svg'" (click)="toggleFieldTextType()">
         </div>
 
-        <div class="hide-pass">
+        <div class="hide-pass rep">
           <input
             [type]="confirmTextType ? 'text' : 'password'"
             class="confirmPassword"
@@ -42,7 +48,7 @@
           >
           <img [src]="confirmTextType ? 'assets/icons/remove_red_eye.svg' : 'assets/icons/close-eye.svg'" (click)="toggleConfirmTextType()">
         </div>
-        <button class="register-btn" (click)="register()">Войти</button>
+        <button class="register-btn" [class.mt]="isValid" (click)="register()">Войти</button>
       </form>
     </div>
   </div>

@@ -15,6 +15,7 @@ export class ModalRegisterComponent implements OnInit {
   fieldTextType: boolean;
   // @ts-ignore
   confirmTextType: boolean;
+  isValid: boolean;
 
   constructor(public matDialogRef: MatDialogRef<ModalRegisterComponent>,
               private _fb: FormBuilder) { }
@@ -42,6 +43,18 @@ export class ModalRegisterComponent implements OnInit {
 
   closeDialog() {
     this.matDialogRef.close();
+  }
+
+  checkPhone(e:any) {
+    const checkValue = Number(e);
+    if (isNaN(checkValue)) {
+      this.isValid = true;
+    } else {
+      this.isValid = false;
+    }
+    if (e === 0) {
+      this.isValid = !this.isValid;
+    }
   }
 
 

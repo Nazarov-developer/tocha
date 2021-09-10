@@ -12,6 +12,7 @@ export class ModalLoginComponent implements OnInit {
 
   loginForm: FormGroup;
   fieldTextType: boolean;
+  isValid: boolean;
 
   constructor(public matDialogRef: MatDialogRef<ModalLoginComponent>,
               private fb: FormBuilder) { }
@@ -40,4 +41,15 @@ export class ModalLoginComponent implements OnInit {
   }
 
 
+  checkPhone(e:any) {
+    const checkValue = Number(e);
+    if (isNaN(checkValue)) {
+      this.isValid = true;
+    } else {
+      this.isValid = false;
+    }
+    if (e === 0) {
+      this.isValid = !this.isValid;
+    }
+  }
 }

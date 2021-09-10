@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openLogin() {
+    const ds = document.body.style.overflow = "hidden";
     this.mobileMenu = false;
     const dialogRef = this.matDialog.open(ModalLoginComponent, {
       data: {},
@@ -29,13 +30,14 @@ export class HeaderComponent implements OnInit {
       panelClass: 'large-window',
     });
     dialogRef.afterClosed().subscribe(close => {
-
+      const ds = document.body.style.overflow = "auto";
     });
   }
 
 
   openRegister() {
     this.mobileMenu = false;
+    const ds = document.body.style.overflow = "hidden";
     const dialog = this.matDialog.open(ModalRegisterComponent, {
       data: {},
       width: '480px',
@@ -43,7 +45,7 @@ export class HeaderComponent implements OnInit {
       panelClass: 'large-window-register',
     });
     dialog.afterClosed().subscribe(close => {
-
+      const ds = document.body.style.overflow = "auto";
     });
   }
 
